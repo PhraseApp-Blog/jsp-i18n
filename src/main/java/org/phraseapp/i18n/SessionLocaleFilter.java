@@ -15,7 +15,11 @@ public class SessionLocaleFilter implements Filter {
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
-        req.getSession().setAttribute("lang", req.getParameter("sessionLocale"));
+        
+        if (req.getParameter("sessionLocale") != null) {
+            req.getSession().setAttribute("lang", req.getParameter("sessionLocale"));
+        }
+        
         chain.doFilter(request, response);
     }
 
