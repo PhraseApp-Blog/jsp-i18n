@@ -21,7 +21,7 @@ public class CookieLocaleFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         if (req.getParameter("cookieLocale") != null) {
-            Cookie cookie = new javax.servlet.http.Cookie("lang", req.getParameter("cookieLocale"));
+            Cookie cookie = new Cookie("lang", req.getParameter("cookieLocale"));
             res.addCookie(cookie);
         }
 

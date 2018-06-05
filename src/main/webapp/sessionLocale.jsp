@@ -4,11 +4,10 @@
 <%@ page isELIgnored="false" %>
 <%@ page session="true" %>
 
-<c:set var="locale" value="${sessionScope.lang}"/>
-<fmt:setLocale value="${locale}"/>
+<fmt:setLocale value="${sessionScope.lang}"/>
 <fmt:setBundle basename="messages"/>
 
-<html lang="${locale}">
+<html lang="${sessionScope.lang}">
 <head>
     <title>PhraseApp - i18n</title>
 </head>
@@ -18,14 +17,6 @@
 	</h2>
 	<p><fmt:message key="label.sessionLocaleContent" /></p>
 	
-	<h2>
-		<fmt:message key="label.chooseSessionLocale" />
-	</h2>
-	<ul>
-		<li><a href="?sessionLocale=en"><fmt:message key="label.lang.en" /></a></li>
-		<li><a href="?sessionLocale=de"><fmt:message key="label.lang.de" /></a></li>
-		<li><a href="?sessionLocale=fr"><fmt:message key="label.lang.fr" /></a></li>
-		<li><a href="?sessionLocale=zh"><fmt:message key="label.lang.cn" /></a></li>
-	</ul>
+	<button><a href="changeLocale.jsp"><fmt:message key="label.back" /></a></button>
 </body>
 </html>
